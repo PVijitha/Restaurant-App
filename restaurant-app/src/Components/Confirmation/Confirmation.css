@@ -1,0 +1,17 @@
+.address-text {
+    font-size: 13px;
+}
+
+.loader-container {
+    background-image: url(/src/assets/images/order-sucess.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100wh;
+    display: flex;
+    justify-content: center;
+    color: rgb(41, 40, 40);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
