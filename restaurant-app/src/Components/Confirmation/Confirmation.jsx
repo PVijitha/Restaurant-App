@@ -2,15 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./Confirmation.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faDollarSign } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 function Confirmation() {
   const userDetails = useLocation()?.state.userDetails;
   const cartItem = useLocation()?.state.cartItem;
   const totalPrice = useLocation()?.state.totalPrice;
-  console.log(cartItem, "cartItem");
-  console.log(totalPrice, "totalPrice");
-  console.log(userDetails, "userDeatils");
+  const navigate = useNavigate();
   const currentDate = new Date();
   const formattedDate = currentDate.toLocaleDateString();
   const [isActive, setIsActive] = useState(true);
@@ -26,6 +25,15 @@ function Confirmation() {
     };
   }, [isActive]);
 
+  function setLocalStorageData() {
+    localStorage.setItem("Items", JSON.stringify([]));
+    localStorage.setItem("userDetails", JSON.stringify());
+  }
+
+  function backTohome() {
+    setLocalStorageData();
+    navigate(`/`);
+  }
   return (
     <>
       {!isActive ? (
@@ -42,9 +50,9 @@ function Confirmation() {
                   </p>
                   <p className="address-text ms-2 mt-1">
                     <i>
-                      573 Tranquil Lane, Blissful Meadows, Orchid Residency,
-                      Tower B, Wing 4, Floor 9, Apartment 45, Sector 18, Vasant
-                      Kunj Extension, South West Delhi, Delhi 110070, India.
+                    Serenity Haven Retreat - A tranquil escape nestled amidst lush
+                backwaters. Discover comfort and charm at 14 Palm Grove Lane,
+                Fort Kochi, 682001, Kerala, India.
                     </i>
                   </p>
                 </div>
@@ -106,7 +114,7 @@ function Confirmation() {
                 <b>Serenity Haven Retreat</b>
               </p>
               <p>
-                Kochi, Kerala - A tranquil escape nestled amidst lush
+                A tranquil escape nestled amidst lush
                 backwaters. Discover comfort and charm at 14 Palm Grove Lane,
                 Fort Kochi, 682001, Kerala, India.
               </p>
@@ -127,6 +135,8 @@ function Confirmation() {
                   <p>{item.title}</p>
                 </div>
               ))}
+              <hr />
+              <p><b>Total Items: {cartItem.length}</b></p>
             </div>
             <div className="col-3">
               <p>
@@ -138,8 +148,35 @@ function Confirmation() {
                   <p><FontAwesomeIcon icon={faDollarSign} className="me-1"/>{item.price}</p>
                 </div>
               ))}
+              <hr />
+              <p><b><FontAwesomeIcon icon={faDollarSign} className="me-1"/>{totalPrice}</b></p>
             </div>
           </div>
+          <hr />
+          <div className="row totalprice-container">
+               <div className="col-9">
+               </div>
+                <div className="col-3">
+                  <div className="d-flex">
+                    <h5 className="me-5">Grand Total:</h5>
+                    <p><b><FontAwesomeIcon icon={faDollarSign} className="ms-"/>{totalPrice}</b></p>
+                    </div>
+                    <p className="ms-5">Serenity Haven Retreat</p>
+                </div>
+          </div>
+          <p className="d-flex justify-content-end authorized-text">Authorized Signatory</p>
+          <hr/>
+          <div className="back-to-home-container">
+          <button
+            type="button"
+            className="btn btn-outline-dark ms-5 mt-5"
+            onClick={backTohome}
+          >
+            <FontAwesomeIcon icon={faArrowLeft} className="me-2" />
+            Back to home
+          </button>
+          </div>
+          <hr className="mb-5"/>
         </div>
       ) : (
         <div className="loader-container">

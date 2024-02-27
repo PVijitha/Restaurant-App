@@ -15,3 +15,15 @@
     justify-content: center;
     align-items: center;
 }
+
+.totalprice-container {
+    height: 150px;
+}
+
+.authorized-text {
+    margin-right: 152px;
+}
+
+.back-to-home-container {
+    height: 200px;
+}

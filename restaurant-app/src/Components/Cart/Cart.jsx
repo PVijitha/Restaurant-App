@@ -6,7 +6,6 @@ import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate} from 'react-router-dom';
 import "./Cart.css";
 function Cart() {
-  //object
   const cartItem = useLocation()?.state.items;
   const totalPrice = useLocation()?.state.totalPrice;
   const navigate = useNavigate();
@@ -41,8 +40,9 @@ function Cart() {
     </Table>
     </div>
     {cartItem.length > 0 ?   
-    <div className="d-flex justify-content-center mt-4">
-    <button type="button" className="btn btn-outline-secondary ms-5" onClick={() => {navigate(`/credential`, { state: { cartItem: cartItem, totalPrice: totalPrice}})}}>Check out</button>
+    <div className="mt-4">
+    <button type="button" className="btn btn-outline-dark add-more" onClick={() => {navigate(`/`)}}>Add more items...</button>
+    <button type="button" className="btn btn-outline-dark check-out" onClick={() => {navigate(`/credential`, { state: { cartItem: cartItem, totalPrice: totalPrice}})}}>Check out</button>
     </div> : null
     }
     </>
