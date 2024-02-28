@@ -37,22 +37,21 @@ function Confirmation() {
   return (
     <>
       {!isActive ? (
-        <div>
-          <div className="text">
-            <h1 className="d-flex justify-content-center mt-3 mb-5">
+        <div >
+          <div className="text ps-5 pe-5">
+            <h1 className="d-flex justify-content-center mt-3 mb-5 w-100">
               Order Details
             </h1>
-            <div className="row ms-5">
+            <div className="row">
               <div className="col-9">
                 <div className="d-flex">
-                  <p className="d-flex">
+                  <p>
                     <b>Bill-from Address: </b>
                   </p>
-                  <p className="address-text ms-2 mt-1">
+                  <p className="ms-2 address-text mt-1">
                     <i>
-                    Serenity Haven Retreat - A tranquil escape nestled amidst lush
-                backwaters. Discover comfort and charm at 14 Palm Grove Lane,
-                Fort Kochi, 682001, Kerala, India.
+                    Serenity Haven Retreat - Discover comfort and charm at 14 Palm Grove Lane,
+                    Fort Kochi, 682001, Kerala, India.
                     </i>
                   </p>
                 </div>
@@ -67,8 +66,9 @@ function Confirmation() {
               </div>
             </div>
           </div>
-          <hr />
-          <div className="row ms-5">
+          <hr className="line"/>
+          <div className="mid-container p-5">
+          <div className="row">
             <div className="col-3">
               <div className="d-flex">
                 <p>
@@ -91,8 +91,8 @@ function Confirmation() {
               </p>
               <p>{userDetails.address}</p>
               <div className="d-flex">
-                <p>{userDetails.city}</p>
-                <p className="ms-2">{userDetails.zip}</p>
+                <p>{userDetails.zip}</p>
+                <p className="ms-2">{userDetails.city}</p>
                 <p className="ms-2">{userDetails.state}</p>
               </div>
               <p>Phone: {userDetails.phone}</p>
@@ -103,8 +103,8 @@ function Confirmation() {
               </p>
               <p>{userDetails.address}</p>
               <div className="d-flex">
-                <p>{userDetails.city}</p>
-                <p className="ms-2">{userDetails.zip}</p>
+                <p>{userDetails.zip}</p>
+                <p className="ms-2">{userDetails.city}</p>
                 <p className="ms-2">{userDetails.state}</p>
               </div>
               <p>Phone: {userDetails.phone}</p>
@@ -121,9 +121,8 @@ function Confirmation() {
             </div>
           </div>
           <hr />
-          <div className="row ms-5">
+          <div className="row">
             <div className="col-6">
-
             </div>
             <div className="col-3">
               <p>
@@ -151,7 +150,7 @@ function Confirmation() {
               <hr />
               <p><b><FontAwesomeIcon icon={faDollarSign} className="me-1"/>{totalPrice}</b></p>
             </div>
-          </div>
+          </div>        
           <hr />
           <div className="row totalprice-container">
                <div className="col-9">
@@ -164,19 +163,22 @@ function Confirmation() {
                     <p className="ms-5">Serenity Haven Retreat</p>
                 </div>
           </div>
-          <p className="d-flex justify-content-end authorized-text">Authorized Signatory</p>
+          <p className="d-flex justify-content-end">Authorized Signatory</p>
           <hr/>
-          <div className="back-to-home-container">
+           </div>
+          <div className="back-to-home-container w-100">
+            <hr className="line"/>
+            <div className="mt-4">
           <button
             type="button"
-            className="btn btn-outline-dark ms-5 mt-5"
+            className="btn btn-outline-dark ms-5"
             onClick={backTohome}
           >
             <FontAwesomeIcon icon={faArrowLeft} className="me-2" />
             Back to home
           </button>
+            </div>
           </div>
-          <hr className="mb-5"/>
         </div>
       ) : (
         <div className="loader-container">

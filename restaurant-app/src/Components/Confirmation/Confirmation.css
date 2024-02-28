@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    width: 100wh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     color: rgb(41, 40, 40);
@@ -17,13 +17,16 @@
 }
 
 .totalprice-container {
-    height: 150px;
-}
-
-.authorized-text {
-    margin-right: 152px;
+    height: 125px;
 }
 
 .back-to-home-container {
-    height: 200px;
+    /* border-top: 1px solid black; */
+    position: fixed;
+    /* width: 50vw; */
+}
+
+.mid-container {
+    height: 450px;
+    overflow-y: auto; 
 }
