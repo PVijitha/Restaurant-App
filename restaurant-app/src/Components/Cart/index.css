@@ -1,0 +1,27 @@
+.empty-data {
+    background-image: url(/src/assets/images/plate.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 800px;
+    font-size: 30px;
+}
+
+.cart-item-container {
+    height: 200px;
+    width: 480px;
+    border: 2px solid #bab6d0;
+    border-radius: 10px;
+}
+
+.food-cart-image {
+    height: 160px;
+    width: 230px;
+    border-radius: 10px;
+}
+
+.cart-middle-container {
+    height: 520px;
+    padding-bottom: 10px;
+    overflow-y: auto; 
+}

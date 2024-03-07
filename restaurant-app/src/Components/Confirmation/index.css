@@ -1,0 +1,25 @@
+.loader-container {
+    background-image: url(/src/assets/images/order-sucess.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    color: rgb(41, 40, 40);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.totalprice-container {
+    height: 125px;
+}
+
+.mid-container {
+    height: 450px;
+    overflow-y: auto; 
+}
+
+.address-text {
+    font-size: 13px;
+}

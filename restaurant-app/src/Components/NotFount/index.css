@@ -1,0 +1,7 @@
+.notfound-container {
+    background-image: url(/src/assets/images/404gif.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 80vw;
+}
