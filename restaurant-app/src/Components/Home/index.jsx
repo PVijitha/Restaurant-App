@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import "./index.css";
-
 import {MainDishes} from "./MainDishes";
 import {SideDishes} from "./SideDishes";
 import {Drinks} from "./Drinks";
@@ -163,7 +161,10 @@ function Home() {
   function clearCart() {
     setPrice(0);
     setAddItem([]);
-    setUpdatedDishes(itemsData);
+    var newItemsData = itemsData.map((item) => {
+      return {...item, quantity: 0}
+    })
+    setUpdatedDishes(newItemsData);
     localStorage.removeItem("UpdatedDishes");
     localStorage.removeItem("Items");
     localStorage.removeItem("Total");

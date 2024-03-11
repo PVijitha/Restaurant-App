@@ -7,7 +7,7 @@ function Footer({backTohome}) {
     <div>
          <button
               type="button"
-              className="btn btn-outline-dark ms-5 mb-5"
+              className="btn btn-outline-dark ms-5 mt-4"
               onClick={backTohome}
             >
               <FontAwesomeIcon icon={faArrowLeft} className="me-2" />

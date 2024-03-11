@@ -43,8 +43,8 @@ function Credential() {
             : "";
           break;
         case "phone":
-          const filteredInput = value.replace(/\D/g, '');
-          e.target.value = filteredInput;
+          const filteredPhone = value.replace(/\D/g, '');
+          e.target.value = filteredPhone;
           error =
             value.length !== 10
               ? "Phone number must have 10 digits"
@@ -65,7 +65,11 @@ function Credential() {
           error = value === "Choose..." ? "State is required" : "";
           break;
         case "zip":
-          error = value.trim() === "" ? "Zip is required" : "";
+          const filteredZip = value.replace(/\D/g, '');
+          e.target.value = filteredZip;
+          error = value.length !== 6
+          ? "Zip code must have 6 digits"
+          : value.trim() === "" ? "Zip is required" : "";
           break;
         default:
           break;
@@ -165,7 +169,6 @@ function Credential() {
                   type="text"
                   placeholder="0000000000"
                   name="phone"
-                  // value={inputs.phone}
                   onChange={handleChange}
                   onBlur={handleChange}
                   required
@@ -257,10 +260,9 @@ function Credential() {
                   <FontAwesomeIcon icon={faStar} className="star" />
                 </Form.Label>
                 <Form.Control
-                  type="number"
+                  type="text"
                   placeholder="000000"
                   name="zip"
-                  value={inputs.zip}
                   onChange={handleChange}
                   onBlur={handleChange}
                   required

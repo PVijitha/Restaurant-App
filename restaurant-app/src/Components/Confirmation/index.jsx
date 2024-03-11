@@ -8,7 +8,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 function Confirmation() {
   const [cartItem, setCartItem] = useState([]);
-  const [totalPrice, seTotalPrice] = useState(0.0);
+  const [totalPrice, setTotalPrice] = useState(0.0);
   const [userDetails, setUserDetails] = useState({});
   const phone = useLocation()?.state.phone;
   const isNewAddress = useLocation()?.state.isNewAddress;
@@ -65,15 +65,18 @@ function Confirmation() {
         return parsedItems;
       });
     }
-    seTotalPrice(price);
+    setTotalPrice(price);
   }
 
-  const totalQuantity = cartItem.reduce((accumulator, currentItem) => {
-    return accumulator + currentItem.quantity;
-  }, 0);
+  let totalQuantity = 0;
+  const quantities = cartItem.map((item) => parseFloat(item.quantity));
+  quantities.forEach((quantity) => {
+  totalQuantity += quantity;
+  });
 
   function backTohome() {
-    localStorage.setItem("Items", JSON.stringify([]));
+    localStorage.removeItem("Items");
+    localStorage.removeItem("Total");
     navigate(`/`);
   }
   return (
@@ -103,7 +106,7 @@ function Confirmation() {
         </div>
       ) : (
         <div className="loader-container">
-          <h3>Great news! Your food order went through successfully!</h3>
+          <h3>Congratulations! Your delicious food order has been successfully placed.</h3>
         </div>
       )}
     </>

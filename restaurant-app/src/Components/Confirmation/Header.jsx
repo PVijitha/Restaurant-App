@@ -4,7 +4,7 @@ function Header() {
   return (
     <div>
       <div className="text ps-5 pe-5">
-        <h1 className="d-flex justify-content-center mt-3 mb-5 w-100">
+        <h1 className="d-flex justify-content-center w-100">
           Order Details
         </h1>
         <div className="row">

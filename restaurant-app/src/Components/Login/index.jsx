@@ -41,7 +41,6 @@ function Login() {
       case "phone":
         const filteredInput = value.replace(/\D/g, '');
         e.target.value = filteredInput;
-        console.log(filteredInput);
         error =
           value.length !== 10
             ? "Phone number must have 10 digits"
@@ -63,6 +62,8 @@ function Login() {
             : "";
         break;
       case "zip":
+        const filteredZip = value.replace(/\D/g, '');
+        e.target.value = filteredZip;
         error =
           value.length !== 6
             ? "Zip code must have 6 digits"
@@ -160,7 +161,6 @@ function Login() {
                   type="text"
                   name="phone"
                   placeholder="0000000000"
-                  // value={inputs.phone}
                   onChange={handleChange}
                   onBlur={handleChange}
                   pattern="[0-9]*"
@@ -259,8 +259,7 @@ function Login() {
                       <Form.Label>Zip</Form.Label>
                       <FontAwesomeIcon icon={faStar} className="star" />
                       <Form.Control
-                        type="number"
-                        value={inputs.zip}
+                        type="text"
                         name="zip"
                         onChange={handleChange}
                         onBlur={handleChange}
