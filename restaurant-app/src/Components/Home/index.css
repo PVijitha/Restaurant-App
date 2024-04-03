@@ -1,0 +1,73 @@
+.heading {
+    font-family: Snell Roundhand, cursive;
+    font-size: 45px;
+    color: #ff5900;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    background-image: url(/src/assets/images/restaurant.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+}
+
+  .text {
+    color: #322c55;
+  }
+
+  .text-desc {
+    color: #524485;
+  }
+
+  .image-container {
+    height: 98px;
+    width: 185px;
+  }
+  .line {
+    background: rgb(40, 33, 74);
+    color: #28214a;
+    height: 2px;
+  }
+
+  .footer {
+    position: fixed;
+    z-index: 1;
+    height: 125px;
+    background-color: white;
+  }
+
+  .middle-container {
+    height: 470px;
+    padding-bottom: 10px;
+    overflow-y: auto; 
+  }
+  
+  .left-btn {
+    border: none;
+    &:hover {
+      background-color: rgb(188, 186, 186);
+    }
+  }
+
+  .right-btn {
+    border: none;
+    &:hover {
+      background-color: rgb(188, 186, 186);
+    }
+  }
+
+  .cnt-btn {
+    border: none;
+  }
+
+  .search-bar {
+    width: 500px;
+    margin-left: 480px;
+  }
